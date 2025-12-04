@@ -4,7 +4,22 @@ const Suggestions = ({ suggestions, onSelect }) => {
   if (!suggestions.length) return null;
 
   return (
-    <div className="mt-2 bg-white dark:bg-[#1a1a1a] dark:text-white border border-gray-300 dark:border-gray-600 rounded-xl shadow-md max-h-48 overflow-y-auto">
+    <div
+      className="
+        absolute 
+        w-full 
+        bg-white dark:bg-[#1a1a1a] dark:text-white 
+        border border-gray-300 dark:border-gray-600 
+        rounded-xl shadow-md 
+        max-h-50 overflow-y-auto
+
+        /* MOBILE: show ABOVE input */
+        bottom-full mb-2
+
+        /* DESKTOP: show BELOW input */
+        sm:bottom-auto sm:mt-2
+      "
+    >
       {suggestions.map((item, index) => (
         <button
           key={index}

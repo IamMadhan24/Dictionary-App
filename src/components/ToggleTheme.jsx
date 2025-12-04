@@ -5,7 +5,14 @@ const ToggleTheme = () => {
   const [theme, setTheme] = useState("dark");
 
   useEffect(() => {
-    document.documentElement.classList.add("dark");
+    const savedTheme = localStorage.getItem("theme");
+
+    if (savedTheme) {
+      setTheme(savedTheme);
+      document.documentElement.classList.toggle("dark", savedTheme === "dark");
+    } else {
+      document.documentElement.classList.add("dark");
+    }
   }, []);
 
   const toggleTheme = () => {
@@ -13,6 +20,8 @@ const ToggleTheme = () => {
     setTheme(newTheme);
 
     document.documentElement.classList.toggle("dark", newTheme === "dark");
+
+    localStorage.setItem("theme", newTheme);
   };
 
   return (
