@@ -11,13 +11,13 @@ const Suggestions = ({ suggestions, onSelect }) => {
         bg-white dark:bg-[#1a1a1a] dark:text-white 
         border border-gray-300 dark:border-gray-600 
         rounded-xl shadow-md 
-        max-h-50 overflow-y-auto
+        max-h-30 overflow-y-auto
 
         /* MOBILE: show ABOVE input */
         bottom-full mb-2
 
         /* DESKTOP: show BELOW input */
-        sm:bottom-auto sm:mt-2
+        sm:bottom-auto sm:mt-2 sm:max-h-50
       "
     >
       {suggestions.map((item, index) => (
