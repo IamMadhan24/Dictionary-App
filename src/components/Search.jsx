@@ -32,7 +32,7 @@ const Search = ({ onSearch, onClear }) => {
           setSuggestions(data.filter((item) => !item.word.includes(" ")))
         )
         .catch(() => setSuggestions([]));
-    }, 300);
+    }, 150);
   }, [word]);
 
   useEffect(() => {
